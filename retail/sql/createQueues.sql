@@ -49,3 +49,24 @@ begin
 
 end;
 /
+
+begin
+   dbms_aqadm.add_subscriber(
+      queue_name => 'ADMIN.ORDERQUEUE',
+      subscriber => sys.aq$_agent(
+         'INVENTORY_SERVICE',
+         null,
+         null
+      )
+   );
+
+   dbms_aqadm.add_subscriber(
+      queue_name => 'ADMIN.INVENTORYQUEUE',
+      subscriber => sys.aq$_agent(
+         'ORDER_SERVICE',
+         null,
+         null
+      )
+   );
+end;
+/
