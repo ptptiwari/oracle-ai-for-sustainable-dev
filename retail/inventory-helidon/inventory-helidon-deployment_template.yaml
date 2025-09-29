@@ -17,25 +17,25 @@ spec:
     spec:
       containers:
         - name: inventory
-          image: ${DOCKER_REGISTRY}/inventory-helidon:0.1
+          image: us-ashburn-1.ocir.io/oradbclouducm/gd35252210/inventory-helidon:0.1
           imagePullPolicy: Always
           env:
             - name: oracle.ucp.jdbc.PoolDataSource.inventorypdb.user
               value: "inventoryuser"
             - name: oracle.ucp.jdbc.PoolDataSource.inventorypdb.URL
-              value: "jdbc:oracle:thin:@${INVENTORY_DB_ALIAS}?TNS_ADMIN=/msdataworkshop/creds"
+              value: "jdbc:oracle:thin:@financialdb_high?TNS_ADMIN=/msdataworkshop/creds"
             - name: queueowner
-              value: "AQ"
+              value: "ADMIN"
             - name: orderqueuename
               value: "ORDERQUEUE"
             - name: inventoryqueuename
               value: "inventoryqueue"
             - name: OCI_REGION
-              value: "${OCI_REGION-}"
+              value: ""
             - name: VAULT_SECRET_OCID
-              value: "${VAULT_SECRET_OCID-}"
+              value: ""
             - name: isSuggestiveSaleAIEnabled
-              value: "${IS_SUGGESTIVE_SALE_ENABLED}"
+              value: "false"
             - name: dbpassword
               valueFrom:
                 secretKeyRef:
@@ -51,4 +51,4 @@ spec:
       volumes:
         - name: creds
           secret:
-            secretName: inventory-db-tns-admin-secret
+            secretName: grabdish-wallet

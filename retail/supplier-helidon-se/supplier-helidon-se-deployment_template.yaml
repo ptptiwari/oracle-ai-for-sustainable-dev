@@ -21,13 +21,13 @@ spec:
         - name: database.user
           value: "INVENTORYUSER"
         - name: database.url
-          value: "jdbc:oracle:thin:@${INVENTORY_DB_ALIAS}?TNS_ADMIN=/msdataworkshop/creds"
+          value: "jdbc:oracle:thin:@financialdb_high?TNS_ADMIN=/msdataworkshop/creds"
         - name: inventoryqueuename
           value: "inventoryqueue"
         - name: OCI_REGION
-          value: "${OCI_REGION}"
+          value: ""
         - name: VAULT_SECRET_OCID
-          value: "${VAULT_SECRET_OCID}"
+          value: ""
         - name: dbpassword
           valueFrom:
             secretKeyRef:
@@ -43,4 +43,4 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: inventory-db-tns-admin-secret
+          secretName: grabdish-wallet
