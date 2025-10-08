@@ -22,8 +22,8 @@
   },
   "databases": {
     "poc_database": "${adb_admin_credential}@tmbladbdedicated_high?TNS_ADMIN=/Users/XYZ/Downloads/Wallet_TmblAdbDedicated",
-    "poc_database2":"admin/XYZ@//10.X.X:1521,10..X.X:1521,10..X.X:1521/CM800000TD_low.atp.oraclecloud.com",
-   },
+    "poc_database2": "admin/XYZ@//10.X.X:1521,10..X.X:1521,10..X.X:1521/CM800000TD_low.atp.oraclecloud.com"
+  },
   "rag": {
     "enabled": true,
     "database": {
