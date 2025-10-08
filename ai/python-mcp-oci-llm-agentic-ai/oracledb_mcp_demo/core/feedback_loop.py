@@ -32,7 +32,7 @@ class FeedbackLoopConfig:
     max_iterations: int = 3
     target_quality_score: float = 0.8
     min_improvement_threshold: float = 0.1
-    feedback_file_path: str = ".oracledb-mcp-demo.md"
+    feedback_file_path: str = ".oracledb_mcp_demo.md"
 
 
 class EvaluationStrategy:

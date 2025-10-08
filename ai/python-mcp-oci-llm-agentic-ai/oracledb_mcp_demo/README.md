@@ -25,7 +25,7 @@ An AI-powered Oracle database assistant that uses natural language to interact w
 
 ```bash
 git clone <repository-url>
-cd oracle-mcp-demo
+cd oracledb_mcp_demo
 ```
 
 2. Create a virtual environment:
@@ -44,6 +44,11 @@ pip install -e .
 4. Configure the application by editing `config/config.json` with your settings
 
 ### Environment Variables
+export openai_mcp_api_key="XYZ"
+export adb_admin_credential="XYZ"
+export adb_admin_credential="ADMIN/XYZ"
+export adb_txeventq_credential="TXEVENTQ_ADMIN/XYZ"
+
 
 For vector database connection, set these environment variables:
 
@@ -60,28 +65,13 @@ Start the Oracle Mcp CLI:
 
 ```bash
 # Using the installed script
-oracle-mcp-demo
+oracledb_mcp_demo
 
 # Or directly with Python
-python -m oracledb-mcp-demo
+python -m oracledb_mcp_demo
 ```
-
-### Testing
 
 Run tests with the provided scripts:
-
-```bash
-# Run all tests
-python scripts/run_all.py tests all
-
-# Run specific test types
-python scripts/run_all.py tests unit              # Unit tests only
-python scripts/run_all.py tests e2e               # End-to-end tests only
-
-# Or use pytest directly
-pytest tests/unit/ -v                    # Unit tests
-pytest tests/e2e/ -v                     # E2E tests
-```
 
 ## Architecture
 
@@ -104,20 +94,8 @@ oracledb-mcp-demo/
 ├── core/                # Core business logic
 ├── llm/                 # LLM provider implementations
 ├── mcp_client/          # MCP client implementation
-├── vector_db/           # Oracle Vector Store integration
-├── tools/               # Utility tools for knowledge management
-├── tests/               # Comprehensive test suite
-└── config/              # Configuration files
-```
-
-### Code Quality
-
-Maintain code quality with built-in tools:
-
-```bash
-# Check and fix markdown quality
-python scripts/run_all.py lint --fix
-
-# Preview fixes before applying
-python scripts/run_all.py lint --fix --dry-run
+├── vector_db/           # In Progress
+├── tools/               # In Progress
+├── tests/               # In Progress
+└── config/              # In Progress
 ```
